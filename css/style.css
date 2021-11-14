@@ -1,0 +1,28 @@
+	
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.techFont {
+    font-family: Inconsolata;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+}
+
+a {
+	font-family: serif black 16px;
+	text-decoration: none;
+	color: #806C49;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #807A6F;
+}
+
+.t-m {
+	color: #888888;
+}
