@@ -1,10 +1,10 @@
 ---
 title: Hello, world!
 description: The first post and an introduction to my blog
-date: 02/04/2023
+date: "2023-04-02"
 tldr: Just introducing myself
 draft: false
-tags: introduction personal
+tags: [Introduction,Personal]
 ---
 
 Welcome to my blogging space on the internet.
