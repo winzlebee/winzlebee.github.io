@@ -10,6 +10,9 @@ pygmentscodefencesguesssyntax = true
 
 paginate=3 # articles per page
 
+[markup.goldmark.renderer]
+unsafe= true
+
 [params]
 	mode = "toggle"
 	useCDN = true
