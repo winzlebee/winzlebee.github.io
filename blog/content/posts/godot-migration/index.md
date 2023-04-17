@@ -10,7 +10,7 @@ tags: [Godot,Game,Development,Devlog,Tutorial]
 
 I've transitioned from Godot 3 to Godot 4 for one of my projects, one that I call 'Spacer' (working title of course)
 
-It's a 3D godot project, and as such most of the tips I am going to mention here are going to be 3D-centric, however hopefully this can be of some use for 2D projects. Mainly, this is a way to write all
+It's a 3D godot project, and as such most of the tips I am going to mention here are going to be 3D-centric, however hopefully this can be of some use for 2D projects. Mainly, this is a way to write all of this down for the record so that I don't forget what I needed to do. This is not the only Godot project that needs to be migrated, as I am sure anybody reading this is aware!
 
 So without further delay, here are the issues that I ran into, in the order that I encountered them. One in particular may save you a fair amount of hair-pulling. I ran the default Godot conversion tool and the changes I have outlined below are ones that the tool missed in the current state.
 
