@@ -121,7 +121,12 @@ func _process(delta):
 
     # We now need to explicitly call the function in the base class
 	super._process(delta)
+
+    # ... or we can use the shorthand
+    # super(delta)
 ```
+
+**Edit:** Thanks [DrehmonGreen](https://www.reddit.com/r/godot/comments/12q44oc/comment/jgoq6c3/?utm_source=reddit&utm_medium=web2x&context=3) for showing me the `super()` shorthand
 
 ### 5. Moving from Bullet to the Godot Physics Engine
 
@@ -199,6 +204,73 @@ func _puppet_update_target(dir, pos, shooting, bank_target):
 	self.autopilot_bank_amount = bank_target
 
 ```
+
+### 9. The `instance()` method
+
+In my project, the Godot 4 automatic project conversion tool found all of my **PackedScene** `instance()` calls and replaced them with the new function, `instantiate()`.
+I'm placing this here as this is one of the more frequently called functions in the Godot API, and many existing tutorials on the 'net will use the function call. When used, new users will be greeted with the cryptic error message;
+
+Invalid call. Nonexistent function 'instance' in base 'PackedScene'.
+
+For new users (especially to programming), this doesn't make a whole lot of sense.
+
+* Why is my call invalid? (denial)
+* The tutorial said it would work!! (anger)
+* What is a "packed scene"? (bargaining)
+* Why is the function Nonexistent? (depression)
+
+The solution? Change all `instance()` calls to `instantiate()` *(acceptance)*.
+
+### 10. *KinematicBody* has been removed, long live *CharacterBody*
+
+*KinematicBody* was the Godot 3 class for controlling 3D characters. It has now been removed, and replaced with *CharacterBody3D*.
+In most cases, this just means that you no longer need to track velocity using your own velocity class variable. You can now use the one that was inherited from the super class.
+
+Code like;
+
+```gdscript
+extends KinematicBody
+
+var speed    = 300.0
+var velocity = Vector3.ZERO
+
+func _physics_process(delta):
+
+    # Get the input direction.
+    var direction = Input.get_axis("ui_left", "ui_right")
+    velocity.x = direction * speed
+
+    move_and_slide(self.velocity)
+```
+
+Becomes (note the addition of movement modes);
+
+```gdscript
+extends CharacterBody3D
+
+var speed = 300.0
+
+func _ready():
+
+    # NOTE: There are now two main movement modes. This would be the correct mode for platformers
+    # (and is also the default)
+
+    motion_mode = MOTION_MODE_GROUNDED
+
+    # For top-down games, we don't care about collisions with walls so we use this mode instead
+
+    motion_mode = MOTION_MODE_FLOATING
+
+func _physics_process(delta):
+
+    # Get the input direction.
+    var direction = Input.get_axis("ui_left", "ui_right")
+    velocity.x = direction * speed
+
+    move_and_slide()
+```
+
+A comprehensive guide to the new character controllers is [available in the documentation](https://docs.godotengine.org/en/stable/tutorials/physics/using_character_body_2d.html).
 
 ## The project itself
 
