@@ -6,15 +6,13 @@ draft: false
 tags: [Godot,Game,Development,Devlog,Tutorial]
 ---
 
-## Transitioning to Godot 4
-
 I've transitioned from Godot 3 to Godot 4 for one of my projects, one that I call 'Spacer' (working title of course)
 
 It's a 3D godot project, and as such most of the tips I am going to mention here are going to be 3D-centric, however hopefully this can be of some use for 2D projects. Mainly, this is a way to write all of this down for the record so that I don't forget what I needed to do. This is not the only Godot project that needs to be migrated, as I am sure anybody reading this is aware!
 
 So without further delay, here are the issues that I ran into, in the order that I encountered them. One in particular may save you a fair amount of hair-pulling. I ran the default Godot conversion tool and the changes I have outlined below are ones that the tool missed in the current state.
 
-### 1. Change raycasts to use the PhysicsRayQueryParameters3D structure
+## 1. Change raycasts to use the PhysicsRayQueryParameters3D structure
 
 This one should be fairly self explanatory. The API for PhysicsDirectSpaceState3D (a parameter of GDScene that allows programmatic physics scene queries) has changed such that a data structure is now used for specifying the ray query parameters.
 
@@ -63,7 +61,7 @@ var result = space_state.intersect_ray(params)
 
 This is a very welcome change. I can now just glance at the code to see what I am doing with my collision masks!
 
-### 2. The particle process material API has changed
+## 2. The particle process material API has changed
 
 I have some code that programmatically affects GPU particles by changing the velocity. I needed to change these calls. One welcome change here is we can now specify a velocity range, which looks stellar!
 
@@ -83,7 +81,7 @@ thruster.process_material.initial_velocity_max = thruster.process_material.initi
 Setting the maximum in this case as double was an arbitrary choice that looked nice in my case.
 ... and related to the above;
 
-### 3. Particle process materials now have different parameters
+## 3. Particle process materials now have different parameters
 
 This just means heading over to the relevant properties pane and changing things as necessary.
 
@@ -101,7 +99,7 @@ This just means heading over to the relevant properties pane and changing things
 
 {{< figure src="particle-animation.png" title="Particle animation" >}}
 
-### 4. Extending a base class no longer duplicates engine function calls
+## 4. Extending a base class no longer duplicates engine function calls
 
 This one was a really big one, and represented a behaviour I did not even realise I relied on. In **Godot 3.x**, engine function calls on derived classes such as `_process()` and `_ready()` were automatically called in reverse-order of their depth in the inheritance heirachy, much like class constructors in other languages. In **Godot 4.x**, these functions are no longer called and need to be explicitly called using `super.func()`
 
@@ -128,7 +126,7 @@ func _process(delta):
 
 **Edit:** Thanks [DrehmonGreen](https://www.reddit.com/r/godot/comments/12q44oc/comment/jgoq6c3/?utm_source=reddit&utm_medium=web2x&context=3) for showing me the `super()` shorthand
 
-### 5. Moving from Bullet to the Godot Physics Engine
+## 5. Moving from Bullet to the Godot Physics Engine
 
 Some of my ship control code relied on specific values for angular damping. I needed to change these to work with the internal godot physics engine.
 
@@ -142,12 +140,12 @@ self.set_linear_damp(0)  # Now this makes sense!
 self.set_angular_damp(2) # Not sure about this one...
 ```
 
-### 6. Materials are a bit messed up
+## 6. Materials are a bit messed up
 
 I needed to re-assign all of my materials for my meshes. Even then, they didn't look quite how I remembered them.
 Just re-drag any materials to any scenes you have with meshes in them.
 
-### 7. Environment textures are cleared sometimes
+## 7. Environment textures are cleared sometimes
 
 With the new rendering engine and the new sky system, it seems like if you have an environment texture it is no longer loaded. Another thing I noticed is that I was using a *16-bit PNG* as an environment texture, and these no longer load as 16-bit textures.
 
@@ -160,7 +158,7 @@ To fix this;
 
 {{< figure src="panorama-sky.png" title="Sky panorama texture" >}}
 
-### 8. Multiplayer issues
+## 8. Multiplayer issues
 
 The changes to the multiplayer system in Godot were thorough and very well thought out. You can read more about the new system in [this series of blog posts](https://godotengine.org/article/multiplayer-changes-godot-4-0-report-4/). Since this article, the API has changed very slightly, however most of the document is still relevant. Unfortunately, as of today the Godot Documentation has not been updated for Godot 4. The steps that were required for my project were;
 
@@ -205,7 +203,7 @@ func _puppet_update_target(dir, pos, shooting, bank_target):
 
 ```
 
-### 9. The `instance()` method
+## 9. The `instance()` method
 
 In my project, the Godot 4 automatic project conversion tool found all of my **PackedScene** `instance()` calls and replaced them with the new function, `instantiate()`.
 I'm placing this here as this is one of the more frequently called functions in the Godot API, and many existing tutorials on the 'net will use the function call. When used, new users will be greeted with the cryptic error message;
@@ -221,7 +219,7 @@ For new users (especially to programming), this doesn't make a whole lot of sens
 
 The solution? Change all `instance()` calls to `instantiate()` *(acceptance)*.
 
-### 10. *KinematicBody* has been removed, long live *CharacterBody*
+## 10. *KinematicBody* has been removed, long live *CharacterBody*
 
 *KinematicBody* was the Godot 3 class for controlling 3D characters. It has now been removed, and replaced with *CharacterBody3D*.
 In most cases, this just means that you no longer need to track velocity using your own velocity class variable. You can now use the one that was inherited from the super class.
