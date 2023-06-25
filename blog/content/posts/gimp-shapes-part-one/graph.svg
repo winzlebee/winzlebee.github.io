@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="134.35182mm"
+   height="50.803165mm"
+   viewBox="0 0 134.35182 50.803165"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="TriangleStart"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-23.201976,-97.696834)">
+    <g
+       id="g1605">
+      <g
+         id="g591">
+        <rect
+           style="fill:#000000;stroke:#f5fcff;stroke-width:0.1;stroke-linejoin:bevel;stroke-dashoffset:0.63"
+           id="rect234"
+           width="26.89484"
+           height="17.351509"
+           x="78.055161"
+           y="97.746834" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.48593px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+           x="82.21888"
+           y="107.06893"
+           id="text536"><tspan
+             id="tspan534"
+             style="fill:#ffffff;stroke-width:0.264582"
+             x="82.21888"
+             y="107.06893">GimpVectorTool</tspan></text>
+      </g>
+      <g
+         id="g599"
+         transform="translate(-54.803185,33.351655)">
+        <rect
+           style="fill:#000000;stroke:#f5fcff;stroke-width:0.1;stroke-linejoin:bevel;stroke-dashoffset:0.63"
+           id="rect593"
+           width="26.89484"
+           height="17.351509"
+           x="78.055161"
+           y="97.746834" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.48593px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+           x="83.285339"
+           y="107.06893"
+           id="text597"><tspan
+             id="tspan595"
+             style="fill:#ffffff;stroke-width:0.264582"
+             x="83.285339"
+             y="107.06893">GimpPathTool</tspan></text>
+      </g>
+      <g
+         id="g607"
+         transform="translate(-19.017523,33.351656)">
+        <rect
+           style="fill:#000000;stroke:#f5fcff;stroke-width:0.1;stroke-linejoin:bevel;stroke-dashoffset:0.63"
+           id="rect601"
+           width="26.89484"
+           height="17.351509"
+           x="78.055161"
+           y="97.746834" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.48593px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+           x="80.18042"
+           y="107.06893"
+           id="text605"><tspan
+             style="fill:#ffffff;stroke-width:0.264582"
+             x="80.18042"
+             y="107.06893"
+             id="tspan677">GimpRectangleTool</tspan></text>
+      </g>
+      <g
+         id="g615"
+         transform="translate(16.76814,33.351657)">
+        <rect
+           style="fill:#000000;stroke:#f5fcff;stroke-width:0.1;stroke-linejoin:bevel;stroke-dashoffset:0.63"
+           id="rect609"
+           width="26.89484"
+           height="17.351509"
+           x="78.055161"
+           y="97.746834" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.48593px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+           x="82.237526"
+           y="107.06893"
+           id="text613"><tspan
+             id="tspan611"
+             style="fill:#ffffff;stroke-width:0.264582"
+             x="82.237526"
+             y="107.06893">GimpEllipseTool</tspan></text>
+      </g>
+      <g
+         id="g623"
+         transform="translate(52.553803,33.351658)">
+        <rect
+           style="fill:#000000;stroke:#f5fcff;stroke-width:0.1;stroke-linejoin:bevel;stroke-dashoffset:0.63"
+           id="rect617"
+           width="26.89484"
+           height="17.351509"
+           x="78.055161"
+           y="97.746834" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.48593px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+           x="81.208351"
+           y="107.06893"
+           id="text621"><tspan
+             id="tspan619"
+             style="fill:#ffffff;stroke-width:0.264582"
+             x="81.208351"
+             y="107.06893">GimpPolygonTool</tspan></text>
+      </g>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
+         d="M 91.502578,115.09834 36.699393,131.09849"
+         id="path798" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
+         d="M 91.502578,115.09834 72.485056,131.09849"
+         id="path800" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
+         d="m 91.502578,115.09834 16.768142,16.00015"
+         id="path802" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
+         d="m 91.502578,115.09834 52.553802,16.00015"
+         id="path804" />
+    </g>
+  </g>
+</svg>
