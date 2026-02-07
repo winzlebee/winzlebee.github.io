@@ -6,8 +6,6 @@ draft: false
 tags: [KDE,free,software,desktop,krunner,launcher,menu,start,problem,freeze,launch,lag,tip,tutorial]
 ---
 
-# Fixing slowdowns in KDE (6 or newer)
-
 Recently I took to debugging reasons that my machine was having issues with lag when *typing* into the KDE application launcher. I'm also a heavy user of KRunner, and I was also having lag when using it. To summarise, when I begun I had all of the following symptoms
 
 1. The KDE launcher ('Start Menu') was randomly and intermittently freezing and sometimes taking a long time to come up
