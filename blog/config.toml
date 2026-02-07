@@ -8,7 +8,7 @@ pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-paginate=3 # articles per page
+pagination.pagerSize=3
 
 [markup.goldmark.renderer]
 unsafe= true
